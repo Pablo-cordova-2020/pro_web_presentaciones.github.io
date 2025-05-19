@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Arquitectura de Software - Presentación</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      padding: 60px 30px;
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      transition: opacity 1s ease;
+    }
+
+    .slide.active {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      color: #00fff7;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #00fff7;
+    }
+
+    p, ul {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ccefff;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .slide img {
+      max-width: 60%;
+      max-height: 300px;
+      margin: 25px auto;
+      display: block;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00fff7;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .controls button {
+      background: #00fff7;
+      color: #111;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background 0.3s ease;
+    }
+
+    .controls button:hover {
+      background: #00d6c7;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Diapositivas -->
+<div class="slide active">
+  <h1>Arquitectura de Software</h1>
+  <p>La arquitectura de software es el diseño estructural de un sistema, 
+    que define cómo interactúan sus componentes entre sí para cumplir con 
+    los requisitos funcionales y no funcionales. </p>
+    
+  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&w=1000&q=80" alt="Software Architecture Futuristic">
+<img src="https://d3a9n3quhe2vf1.cloudfront.net/img/article/que-es-arquitectura-de-computadoras.webp" alt="Software ">
+</div>
+
+<div class="slide">
+  <h2>Propósito de la arquitectura</h2>
+  <ul>
+    <li>Organizar el código y los componentes. Facilitar la escalabilidad, mantenimiento y evolución del sistema. 
+        Garantizar que el software cumpla con los objetivos del negocio. </li>
+    <li>Facilita mantenimiento y evolución
+
+    </li>
+    <li>Responde a objetivos del negocio
+        
+    </li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1000&q=80" alt="Blueprint Digital">
+</div>
+
+<div class="slide">
+  <h2>Componentes principales</h2>
+  <ul>
+    <li><strong>Módulos:</strong> Autenticación, usuarios, etc.</li>
+    <li><strong>Interfaces:</strong> API, sockets</li>
+    <li><strong>Patrones:</strong> MVC, capas, microkernel</li>
+  </ul>
+  
+  <img src="https://images.unsplash.com/photo-1611221407813-7b2d23c45f69?auto=format&fit=crop&w=1000&q=80" alt="Componentes de software">
+</div>
+<div class="slide">
+  <h2>Principios clave </h2>
+  <ul>
+    <li><strong>Modularidad :  </strong> Divide el sistema en partes independientes.</li>
+    <li><strong>Abstracción :</strong> Oculta detalles complejos detrás de interfaces simples. </li>
+    <li><strong>Escalabilidad :</strong> Permite que el sistema crezca sin perder rendimiento. </li>
+     <li><strong>Reusabilidad :</strong> Componentes que pueden usarse en diferentes contextos.  </li>
+</ul>
+  
+  <img src="https://images.unsplash.com/photo-1611221407813-7b2d23c45f69?auto=format&fit=crop&w=1000&q=80" alt="Componentes de software">
+</div>
+<div class="slide">
+  <h2>Ejemplo en desarrollo web</h2>
+  <p>En una aplicación web como un comercio electrónico, la arquitectura podría incluir: Una capa de presentación (frontend con HTML/CSS/JavaScript). Una capa de lógica de negocio (backend con Node.js o Django). Una capa de datos (base de datos como MySQL o MongoDB).</p>
+  <img src="https://images.unsplash.com/photo-1614064641938-a356b7a4cfb4?auto=format&fit=crop&w=1000&q=80" alt="Arquitectura web">
+</div>
+
+<div class="slide">
+  <h2>Arquitectura Monolítica</h2>
+  <p>Una arquitectura monolítica es un enfoque donde todos los componentes de una aplicación están integrados en un solo sistema o ejecutable . Todo (frontend, backend, base de datos, lógica de negocio) se desarrolla, despliega y ejecuta como una unidad.</p>
+  <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1000&q=80" alt="Monolito">
+</div>
+
+<div class="slide">
+  <h2>Monolito: Caracteristicas</h2>
+  <ul>
+    <li>✔ Código unificado : Toda la lógica está en un solo proyecto. </li>
+     <li>✔ Despliegue único : Un solo archivo o servidor contiene toda la aplicación. </li>
+     <li>✔ Base de datos compartida : Todos los módulos acceden a la misma base de datos. </li>
+    
+  </ul>
+  <img src="https://images.unsplash.com/photo-1614893628743-c9f0bdb8fbd2?auto=format&fit=crop&w=1000&q=80" alt="Ventajas y desventajas">
+    <li> ✔ Simplicidad : Fácil de desarrollar y probar en etapas iniciales.</li>
+     <li>✔ Despliegue sencillo : Un solo servidor o contenedor es suficiente. </li>
+     <li>✔ Depuración directa : Todo está en un solo lugar, lo que facilita encontrar errores. </li>
+     <br>
+   <br>
+     <li>✘ Escalabilidad limitada : Difícil de escalar horizontalmente (agregar más servidores). </li>
+     <li>✘ Mantenimiento complejo : A medida que crece, el código se vuelve difícil de gestionar.  </li>
+     <li>✘ Dependencia fuerte : Un cambio en un módulo puede romper toda la aplicación.  </li>
+       
+</div>
+
+<div class="slide">
+  <h2>Arquitectura de Microservicios</h2>
+  <p>La arquitectura de microservicios divide una aplicación en servicios pequeños, independientes y especializados , cada uno encargado de una función específica. Estos servicios se comunican a través de APIs (generalmente REST o gRPC) y pueden desarrollarse, desplegarse y escalarse por separado.</p>
+  <img src="https://images.unsplash.com/photo-1642876357420-14eaa77483dd?auto=format&fit=crop&w=1000&q=80" alt="Microservicios arquitectura">
+  <img src="https://decidesoluciones.es/wp-content/uploads/2019/09/desarrollo-software-1688x844.jpg" alt="Microservicios arquitectura">
+</div>
+
+<div class="slide">
+  <h2>Microservicios: Pros y Contras</h2>
+  <ul>
+    <li>✔ Escalable, flexible, resiliente, Innovador</li>
+     <br>
+      <br>
+    <li>✘ Complejo, la latencia entre servicios, costo operativo, requiere herramientas modernas</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1631124640596-c66689b64c98?auto=format&fit=crop&w=1000&q=80" alt="Microservicios comparación">
+</div>
+
+<div class="slide">
+  <h2>Arquitectura Cliente-Servidor</h2>
+  <p>La arquitectura cliente-servidor es un modelo donde un cliente (como un navegador web o una aplicación móvil) solicita recursos o servicios a un servidor , que procesa las solicitudes y devuelve respuestas. Es la base de la mayoría de las aplicaciones web modernas.</p>
+  <img src="https://images.unsplash.com/photo-1610900901973-9d6b07c636e3?auto=format&fit=crop&w=1000&q=80" alt="Cliente servidor">
+
+   <img src="https://siaguanta.com/wp-content/uploads/2019/12/servidor.jpg" alt="Cliente servidor">
+</div>
+
+<div class="slide">
+  <h2>Arquitectura cliente servidor: Pros y Contras</h2>
+  <ul>
+    <li>✔ Centralización, Escalabilidad, Seguridad</li>
+     <br>
+      <br>
+    <li>✘ Dependencia del servidor, Latencia, Carga en el sevidor,  </li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1631124640596-c66689b64c98?auto=format&fit=crop&w=1000&q=80" alt="Microservicios comparación">
+</div>
+
+<div class="slide">
+  <h2>Resumen: ¿cuándo usar cada una?</h2>
+  <ul>
+    <li><strong>Monolito:</strong> Proyectos pequeños</li>
+    <li><strong>Microservicios:</strong> Escalabilidad y equipos grandes</li>
+    <li><strong>Cliente-servidor:</strong> Modelo universal para apps web</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1602524206930-26d0dd4c2932?auto=format&fit=crop&w=1000&q=80" alt="Resumen tecnologías">
+</div>
+
+<div class="slide">
+  <h1> FIN</h1>
+     <img src="https://media.istockphoto.com/id/1404030356/es/vector/la-pantalla-de-cine-final.jpg?s=1024x1024&w=is&k=20&c=3KpDMVZagxfQbKKKpfnq2Hfyr_PWBUF_ht0yoiTlbfA=" alt="FIN">
+  <ul>
+    <h2 align="right"><strong>Autor:</strong> Pablo Córdova</h2>
+    
+  </ul>
+ 
+</div>
+
+<!-- Controles -->
+<div class="controls">
+  <button onclick="prevSlide()">Anterior</button>
+  <button onclick="nextSlide()">Siguiente</button>
+</div>
+
+<!-- Script JS para navegación -->
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+</script>
+
+</body>
+</html>
